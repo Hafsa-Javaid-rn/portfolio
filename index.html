@@ -545,78 +545,49 @@
   }
 
   /* ============ CONTACT ============ */
-</style>
-</head>
-<body>
+ 
+/* ===== CONTACT FORM ===== */
 
-<section class="section" id="contact">
-</section>
-  <div class="container contact__inner">
-    <span class="eyebrow reveal">05 / Contact</span>
-    <h2 class="section__title reveal">Let's build something</h2>
-    <p class="section__lead reveal">
-      Hiring for a role that needs both code and design sense, or have a project in mind?
-      I'd love to hear about it.
-    </p>
+.contact-form{
+  margin-top:40px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  max-width:700px;
+}
 
-    <!-- CONTACT FORM -->
-    <form id="contactForm" class="contact-form reveal">
-      <input
-        type="text"
-        name="from_name"
-        placeholder="Your name"
-        required
-      />
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:16px 18px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.04);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:1rem;
+  transition:.3s ease;
+}
 
-      <input
-        type="email"
-        name="from_email"
-        placeholder="Your email"
-        required
-      />
+.contact-form textarea{
+  resize:vertical;
+  min-height:160px;
+}
 
-      <textarea
-        name="message"
-        rows="6"
-        placeholder="Write your message..."
-        required
-      ></textarea>
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:var(--violet);
+  box-shadow:0 0 0 4px rgba(155,139,255,0.12);
+}
 
-      <button type="submit" class="btn btn--primary">
-        Send Message
-      </button>
+.form-status{
+  margin-top:6px;
+  color:var(--mint);
+  font-family:var(--font-mono);
+  font-size:.85rem;
+}
 
-      <p id="formStatus" class="form-status"></p>
-    </form>
-
-    <div class="socials reveal">
-      <a href="https://github.com/Hafsa-Javaid-rn" target="_blank">
-        GitHub
-      </a>
-
-      <a href="https://www.linkedin.com/in/hafsa-javaid-52231730b/" target="_blank">
-        LinkedIn
-      </a>
-
-      <a href="https://www.instagram.com/its_hafsa_javaid/" target="_blank">
-        Instagram
-      </a>
-    </div>
-  </div>
-</section>
-```
-
-  /* ============ BACK TO TOP ============ */
-  .back-to-top{
-    position: fixed; bottom: 28px; right: 28px; width: 46px; height:46px; border-radius:50%;
-    background: var(--surface); border: 1px solid var(--border);
-    display:flex; align-items:center; justify-content:center; cursor:pointer;
-    opacity:0; transform: translateY(10px); pointer-events:none; z-index: 90;
-    transition: opacity .3s ease, transform .3s ease, border-color .3s ease;
-  }
-  .back-to-top.is-visible{ opacity:1; transform:none; pointer-events:auto; }
-  .back-to-top:hover{ border-color: var(--mint); }
-  .back-to-top svg{ width:18px; height:18px; color: var(--text); }
 </style>
 </head>
 <body>
@@ -972,33 +943,71 @@
   </div>
 </section>
 
+```html
 <section class="section" id="contact">
   <div class="container contact__inner">
     <span class="eyebrow reveal">05 / Contact</span>
-    <h2 class="section__title reveal">Let's build something</h2>
-    <p class="section__lead reveal">Hiring for a role that needs both code and design sense, or have a project in mind? I'd love to hear about it.</p>
-    <div class="contact__actions reveal">
-      <a href="mailto:hafsajaved1624@gmail.com" class="btn btn--primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Email me
-      </a>
-      <button class="btn btn--ghost" id="copyEmailBtn" type="button">Copy email address</button>
-    </div>
-    <span class="copy-feedback" id="copyFeedback">Copied hafsajaved1624@gmail.com to clipboard</span>
+
+    <h2 class="section__title reveal">
+      Let's build something
+    </h2>
+
+    <p class="section__lead reveal">
+      Hiring for a role that needs both code and design sense,
+      or have a project in mind? I'd love to hear about it.
+    </p>
+
+    <!-- CONTACT FORM -->
+    <form id="contactForm" class="contact-form reveal">
+
+      <input
+        type="text"
+        name="from_name"
+        placeholder="Your name"
+        required
+      />
+
+      <input
+        type="email"
+        name="from_email"
+        placeholder="Your email"
+        required
+      />
+
+      <textarea
+        name="message"
+        rows="6"
+        placeholder="Write your message..."
+        required
+      ></textarea>
+
+      <button type="submit" class="btn btn--primary">
+        Send Message
+      </button>
+
+      <p id="formStatus" class="form-status"></p>
+    </form>
 
     <div class="socials reveal">
-      <a href="https://github.com/Hafsa-Javaid-rn" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+
+      <a href="https://github.com/Hafsa-Javaid-rn"
+         target="_blank"
+         rel="noopener">
         GitHub
       </a>
-      <a href="https://www.linkedin.com/in/hafsa-javaid-52231730b/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+
+      <a href="https://www.linkedin.com/in/hafsa-javaid-52231730b/"
+         target="_blank"
+         rel="noopener">
         LinkedIn
       </a>
-      <a href="https://www.instagram.com/its_hafsa_javaid/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+
+      <a href="https://www.instagram.com/its_hafsa_javaid/"
+         target="_blank"
+         rel="noopener">
         Instagram
       </a>
+
     </div>
   </div>
 </section>
